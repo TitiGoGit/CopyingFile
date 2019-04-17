@@ -12,19 +12,19 @@ public class Main {
         FileOutputStream fos = null;
 
         try {
-            // On instancie nos objets :
-            // fis va lire le fichier
-            // fos va écrire dans le nouveau !
+            /* On instancie nos objets :
+             fis va lire le fichier
+             fos va écrire dans le nouveau !*/
             fis = new FileInputStream(new File("/home/titussor/Bureau/anik2.wav"));
             fos = new FileOutputStream(new File("copie.mp3"));
 
-            // On crée un tableau de byte pour indiquer le nombre de bytes lus à
-            // chaque tour de boucle
+            /* On crée un tableau de byte pour indiquer le nombre de bytes lus à
+             chaque tour de boucle*/
             byte[] buf = new byte[8];
 
-            // On crée une variable de type int pour y affecter le résultat de
-            // la lecture
-            // Vaut -1 quand c'est fini
+            /* On crée une variable de type int pour y affecter le résultat de
+             la lecture
+             Vaut -1 quand c'est fini */
             int n = 0;
 
             /* Tant que l'affectation dans la variable est possible, on boucle
@@ -34,8 +34,8 @@ public class Main {
             while (fis.read(buf) >= 0) {
                 // On écrit dans notre deuxième fichier avec l'objet adéquat
                 fos.write(buf);
-                // On affiche ce qu'a lu notre boucle au format byte et au
-                // format char
+                /* On affiche ce qu'a lu notre boucle au format byte et au
+                 format char */
                 for (byte bit : buf) {
                     System.out.print("\t" + bit + "(" + (char) bit + ")");
                 }
